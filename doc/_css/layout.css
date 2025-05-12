@@ -1,0 +1,40 @@
+/* Layout-CSS */
+
+
+/* media print */
+@media print {
+   .main {
+      position:absolute;
+      width:100%;
+   }
+}
+
+@media screen {
+   /* divs */
+
+   .main {
+      position:absolute;
+      width:80%;
+      left:50%;
+      margin-left:-40%;
+   }
+
+   .section {
+      background-color:#fff;
+      padding-left:10px;
+      padding-right:10px;
+      padding-top:3px;
+      padding-bottom:3px;
+      line-height:140%;
+   }
+      
+   .section_end {
+      background-color:#000;
+      color:#ddd;
+      padding-left:10px;
+      padding-right:10px;
+      padding-top:3px;
+      padding-bottom:3px;
+      line-height:140%;
+   }
+}

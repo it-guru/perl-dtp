@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<title>Perl DTP Module | Desktop Publishing in various formats</title>
+<link rel="stylesheet" type="text/css" href="_css/styles.css">
+<link rel="stylesheet" type="text/css" href="_css/layout.css">
+
+<link rel="stylesheet" type="text/css" href="_scripts/zoomimage/css/zoomimage.css" />
+<link rel="stylesheet" media="screen" type="text/css" href="_scripts/zoomimage/css/custom.css" />
+<script type="text/javascript" src="_scripts/zoomimage/js/jquery.js"></script>
+<script type="text/javascript" src="_scripts/zoomimage/js/eye.js"></script>
+<script type="text/javascript" src="_scripts/zoomimage/js/utils.js"></script>
+<script type="text/javascript" src="_scripts/zoomimage/js/zoomimage.js"></script>
+<script>
+   $(document).ready(function() {
+      $("a.preview").zoomimage({
+         controlsTrigger: 'mouseover',
+         className: 'custom',
+         shadow: 40,
+         controls: false,
+         opacity: 1,
+         beforeZoomIn: function(boxID) {
+            $('#' + boxID)
+               .find('img')
+               .css('opacity', 0)
+               .animate(
+                  {'opacity':1},
+                  { duration: 500, queue: false }
+               );
+         },
+         beforeZoomOut: function(boxID) {
+            $('#' + boxID)
+               .find('img')
+               .css('opacity', 1)
+               .animate(
+                  {'opacity':0},
+                  { duration: 500, queue: false }
+               );
+         }
+      });
+   });
+</script>
+</head>
+<body>
+<div class="main"><a name="topofpage"></a>
+   <table width=100%>
+      <tr>
+         <td align="left" valign="top"><h1>Perl DTP Module</h1>
+                                       <h2>Desktop Publishing in various formats</h2></td>
+         <td align="center" valign="top"></td>
+         <td align="right" valign="top"><h3>created: 08/2013</h3></td>
+      </tr>
+   </table>
+   <div class="section">
+      <table width="100%">
+         <tr>
+            <td align="left"><h3>Contents</h3></td>
+            <td></td>
+            <td align="right"><a href="#topofpage"><img src="_images/pfeil_hoch.gif"></a></td>
+         </tr></table>
+      <p><ul>
+      <li><h2><a href="#generaldescription">General Description</a></h2></li>
+      <li><h2><a href="#outputformats">Output document formats</a></h2></li>
+      <li><h2><a href="#howtouse">How to use DTP module</a></h2></li>
+      <li><h2><a href="#functiondescription">Function Description</a></h2></li>
+         </ul>
+      </p>
+   </div>
+   <p>&nbsp;</p>
+   <div class="section">
+      <table width="100%">
+         <tr>
+            <td align="left"><a name="generaldescription"></a><h3>General Description</h3></td>
+            <td></td>
+            <td align="right"><a href="#topofpage"><img src="_images/pfeil_hoch.gif"></a></td>
+         </tr></table>
+      <p>The Perl DTP Module is a module for Desktop-Publishing, to allow document creation in various formats.<br>
+         It is designated e.g. to create documents of reportings or summaries automatically by use of scripts.<br>
+         Licensed as OpenSource-Software permits a free-of-charge download and use or modify of the software.</p>
+      <p>The programming language is perl, so that makes it easy to use and integrate in existing applications.</p> 
+      <p>For more information and download visit the <a href="https://sourceforge.net/projects/perl-dtp/" target="_self" >Project Summary on Sourceforge</a>.</p>
+   </div>
+   <p>&nbsp;</p>
+   <div class="section">
+      <table width="100%">
+         <tr>
+            <td align="left"><a name="outputformats"></a><h3>Output document formats</h3></td>
+            <td></td>
+            <td align="right"><a href="#topofpage"><img src="_images/pfeil_hoch.gif"></a></td>
+         </tr></table>
+      <p>At first supported formats for document creation were <b>PDF</b>, <b>JPG</b> and <b>PNG</b>. With the last extension it's also possible to create presentations in OpenDoument-Format <b>ODP</b>, based on existing dtp creation classes.</p>
+      <p>At document-creation would payed attention on structure of xml-code, so that the presentation documents are compatible with newer Microsoft&reg; Office PowerPoint versions (tested with PowerPoint 2007).</p>
+      <p>The extension is in development-state, and not optimal designed for performance, document-size or object-alignment.
+      </p>
+   </div>
+   <p>&nbsp;</p>
+   <div class="section">
+      <table width="100%">
+         <tr>
+            <td align="left"><a name="howtouse"></a><h3>How to use DTP module</h3></td>
+            <td></td>
+            <td align="right"><a href="#topofpage"><img src="_images/pfeil_hoch.gif"></a></td>
+         </tr></table>
+      <p>After downloading the module-files from Sourceforge, you can find some sample-files in folder <strong>/test/</strong>.</p>
+      <p>To create files with the scripts you can use it als follows:<br>
+         <strong>perl 6_odpsample.pl odp</strong> would create a presentation-file which looks like the first two pictures in the gallery below.<br>
+         The same call with option <b>pdf</b> instead of <b>odp</b> would create the output as a pdf-document, <b>jpg</b> as a jpeg-image, and so on..
+      </p>
+      <p>Here you can see some output in presentation format from the samples:
+      </p>
+      <table style="border-spacing:10px">
+         <tr>
+            <td><a href="_images/img_odpsample6_1.png" class="preview" title="Preview of Sample 6 (Page1)"><img src="_images/img_odpsample6_1.png" alt="Preview of Sample 6 (Page 1)" width="100" height="*"></a></td>
+            <td><a href="_images/img_odpsample6_2.png" class="preview" title="Preview of Sample 6 (Page2)"><img src="_images/img_odpsample6_2.png" alt="Preview of Sample 6 (Page 2)" width="100" height="*"></a></td>
+            <td><a href="_images/img_sample2_1.png" class="preview" title="Preview of Sample 2 (Page1)"><img src="_images/img_sample2_1.png" alt="Preview of Sample 2 (Page 1)" width="100" height="*"></a></td>
+            <td><a href="_images/img_sample2_2.png" class="preview" title="Preview of Sample 2 (Page2)"><img src="_images/img_sample2_2.png" alt="Preview of Sample 2 (Page 2)" width="100" height="*"></a></td>
+            <td><a href="_images/img_sample3_1.png" class="preview" title="Preview of Sample 3 (Page 1)"><img src="_images/img_sample3_1.png" alt="Preview of Sample 3 (Page 1)" width="100" height="*"></a></td>
+            <td><a href="_images/img_sample3_2.png" class="preview" title="Preview of Sample 3 (Page 2)"><img src="_images/img_sample3_2.png" alt="Preview of Sample 3 (Page 2)" width="100" height="*"></a></td>
+            <td><a href="_images/img_sample4.png" class="preview" title="Preview of Sample 4"><img src="_images/img_sample4.png" alt="Preview of Sample 4" width="100" height="*"></a></td>
+         </tr>
+      </table>
+      <p>For more information of usage read the <b>Function Description</b>.</p>
+   </div>
+   <p>&nbsp;</p>
+   <div class="section">
+      <table width="100%">
+         <tr>
+            <td align="left"><a name="functiondescription"></a><h3>Function Description</h3></td>
+            <td></td>
+            <td align="right"><a href="#topofpage"><img src="_images/pfeil_hoch.gif"></a></td>
+         </tr></table>
+      <p>The DTP-Extension is not fully develeoped, so there still is no support for all the methods in superior dtp module.<br>
+      </p>
+      <table style="border-spacing:5px">
+         <tr>
+            <td width="25px">
+            </td>
+            <td align="left" valign="top">
+               After you included the path of the dtp-library files in your document,<br>
+               <span style="padding-left:20px"><b>use lib('lib','../lib');</b></span><br>
+               and you created dtp object<br>
+               <span style="padding-left:20px"><b>use DTP;</b></span><br>
+               <span style="padding-left:20px"><b>my $dtp=new DTP(odp);</b></span><br>
+               you can call methods with your new <b>$dtp</b> object.
+            </td>
+         </tr>
+      </table>
+      <p>Here is a brief of some important methods, you can use for creating presentation documents by use of perl-dtp:<br>
+      <table style="border-spacing:5px">
+         <tr>
+            <td width="25px">
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               <b>function call</b>
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               <b>call parameter</b>
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               <b>(sample) values</b>
+            </td>
+            <td align="left" valign="top">
+               <b>description</b>
+            </td>
+         </tr>
+         <tr>
+            <td width="25px">
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               NewPage()
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               format
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               A4landscape<br>
+               A4 (default)
+            </td>
+            <td align="left" valign="top">
+               Creates a new page/slide in landscape-<br>
+               or in potrait-layout.
+            </td>
+         </tr>
+         <tr>
+            <td width="25px">
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               TextOut()
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               $x<br>
+               $y<br>
+               $text<br>
+               %font
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               x-position of text element<br>
+               y-position of text element<br>
+               text as string<br>
+               information about fontstyle as hash
+            </td>
+            <td align="left" valign="top">
+               Displays a text element<br>on defined position<br>with given information about<br>text-font and -style.
+            </td>
+         </tr>
+         <tr>
+            <td width="25px">
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               WriteLine()
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               $text<br>
+               %font<br>
+               additional text box styles
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               text as string<br>
+               information about font style as hash<br>
+               addition textbox styles as hash
+            </td>
+            <td align="left" valign="top">
+               Creates a new text element on current position<br>
+               in document. Additionally you can set some values of<br>
+               text box apperance (f.e. background-, border-color,..).
+            </td>
+         </tr>
+         <tr>
+            <td width="25px">
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               Line()
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               $x1<br>
+               $y1<br>
+               $x2<br>
+               $y2<br>
+               additional line styles
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               x-position of start point<br>
+               y-position of start point<br>
+               x-position of end point<br>
+               y-position of end point<br>
+               additional line styles as hash
+            </td>
+            <td align="left" valign="top">
+               Creates a new line element, where you can define the<br>
+               start- and end-position and styles like color and width.
+            </td>
+         </tr>
+         <tr>
+            <td width="25px">
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               Rec()
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               $x1<br>
+               $y1<br>
+               $x2<br>
+               $y2<br>
+               additional box styles
+            </td>
+            <td align="left" valign="top" style="padding-right:30px">
+               x-position of start point<br>
+               y-position of start point<br>
+               x-position of end point<br>
+               y-position of end point<br>
+               additional box styles as hash
+            </td>
+            <td align="left" valign="top">
+               Creates a new rectangle element, where you can define the<br>
+               start (position on the left upper), end (position on the<br>
+               right lower end) and styles like color and if it should be filled.
+            </td>
+         </tr>
+      </table>
+      </p>
+      <p>&nbsp;</p>
+      <p>Additionally you can use subclasses of dtp module to create linecharts or tables, f.e. for creating a linechart you can proceed as follows:<br>
+      <table width="90%">
+         <tr><td align="left" valign="top">
+         <table style="border-spacing:5px">
+            <tr>
+               <td width="25px">
+               </td>
+               <td align="left" valign="top">
+                  <span style="padding-left:20px"><b>#!/usr/bin/perl</b></span><br>
+                  <span style="padding-left:20px"><b></b></span><br>
+                  <span style="padding-left:20px"><b>use strict;</b></span><br>
+                  <span style="padding-left:20px"><b>use lib('../lib','lib');</b></span><br>
+                  <span style="padding-left:20px"><b>use warnings;</b></span><br>
+                  <span style="padding-left:20px"><b>use DTP;</b></span><br>
+                  <span style="padding-left:20px"><b>use DTP::Entity::LineChart;</b></span><br>
+                  <span style="padding-left:20px"><b></b></span><br>
+                  <span style="padding-left:20px"># get new dtp object (for creating pdf document)</span><br>
+                  <span style="padding-left:20px"><b>my $dtp = new DTP("pdf");</b></span><br>
+                  <span style="padding-left:20px"><b></b></span><br>
+                  <span style="padding-left:20px"># create new page / slide in landscape layout</span><br>
+                  <span style="padding-left:20px"><b>$dtp->NewPage(format => "A4landscape");</b></span><br>
+                  <span style="padding-left:20px"><b></b></span><br>
+                  <span style="padding-left:20px"># set your font apperance</span><br>
+                     <table>
+                        <tr>
+                           <td><span style="padding-left:20px"><b>my %font = ( </b></span></td>
+                           <td><span style="padding-left:20px"><b>font</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> "Helvetica",</b></span></td>
+                        <tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>color</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> "darkblue" );</b></span></td>
+                        <tr>
+                     </table>
+                  <span style="padding-left:20px"># set linechart content</span><br>
+                     <table>
+                        <tr>
+                           <td><span style="padding-left:20px"><b>my %p = ( </b></span></td>
+                           <td><span style="padding-left:20px"><b>data</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> [ '1' => [ 1 , 2 , 3 , 4 , 5 ],</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '2' => [ 5 , 4 , 3 , 2 , 1 ],</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '3' => [ 3 , 3 , 3 , 3 , 3 ]],</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>datacolor</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> [ "red", "blue", "green", "yellow", "gray" ],</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>orientation</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> "v",</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>border</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> 1,</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>margin</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> 0,</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>padding</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> 0,</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b>bordercolor</b></span></td>
+                           <td><span style="padding-left:20px"><b>=> "navy",</b></span></td>
+                        </tr>
+                        <tr>
+                           <td><span style="padding-left:20px"><b>) ;</b></span></td>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                           <td><span style="padding-left:20px"><b></b></span></td>
+                        </tr>
+                     </table>
+                  <span style="padding-left:20px"><b></b></span><br>
+                  <span style="padding-left:20px"># get linechart entity object</span><br>
+                  <span style="padding-left:20px"><b>my $e = new DTP::Entity::LineChart(%p);</b></span><br>
+                  <span style="padding-left:20px"><b></b></span><br>
+                  <span style="padding-left:20px"># draw entity object</span><br>
+                  <span style="padding-left:20px"><b>$dtp -> WriteLine ( [ $e ], %font, minheight => 250, border=>1 );</b></span><br>
+                  <span style="padding-left:20px"><b></b></span><br>
+                  <span style="padding-left:20px"># finish document creation and release file</span><br>
+                  <span style="padding-left:20px"><b>foreach my $file ( $dtp -> GetDocument() ) {</b></span><br>
+                  <span style="padding-left:20px"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf ( "created %s \n ", $file);</b></span><br>
+                  <span style="padding-left:20px"><b>}</b></span><br>
+               </td>
+            </tr>
+         </table>
+         </td>
+         <td align="right" valign="bottom">
+            <span style="padding-left:20px">.. the sample creates an output like this:</span><br>
+            <a href="_images/img_sample-in-site01.png" class="preview" title="Preview of this Sample"><img src="_images/img_sample-in-site01.png" alt="Preview of this Sample" width="260" height="*"></a></td>
+         </tr>
+      </table>
+      </p>
+   </div>
+   <p>&nbsp;</p>
+   <div class="section_end">
+      <table width="100%">
+         <tr>
+            <td align="left"><h3>Perl DTP Module | Desktop Publishing in various formats</h3></td>
+            <td></td>
+            <td align="right"><a href="#topofpage"><img src="_images/pfeil_hoch_white.gif"></a></td>
+         </tr>
+      </table>
+      <table>
+         <tr>
+            <td style="padding-right:10px">Developers:</td>
+            <td>Hartmut Vogler <a href="https://sourceforge.net/users/voglerh" target="_blank" title="Sourceforge User-Page"><img src="_images/symbol_user-contact.png"></a></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td>Holm Basedow <a href="https://sourceforge.net/users/basedowh" target="_blank" title="Sourceforge User-Page"><img src="_images/symbol_user-contact.png"></a></td>
+         </tr>
+         <tr>
+            <td></td>
+            <td>Oliver Domeischel <a href="https://sourceforge.net/users/redbull2203" target="_blank" title="Sourceforge User-Page"><img src="_images/symbol_user-contact.png"></a></td>
+         </tr>
+      </table>
+      <p>For more information and download visit the <a href="https://sourceforge.net/projects/perl-dtp/" target="_self" >Project Summary on Sourceforge</a>.</p>
+   </div>
+   <p>&nbsp;</p>
+</div>
+</body>
+</html>

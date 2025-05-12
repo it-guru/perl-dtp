@@ -1,0 +1,29 @@
+
+/* media print */
+
+@media print {
+}
+
+
+body {
+   font-family: Verdana;
+   font-size: 12px;
+   background-color: #ddd;
+   color: #000;
+}
+
+h1 {
+   font-size:18px;
+   font-weight:bold;
+}
+h2 {
+   font-size:14px;
+}
+h3 {
+   font-size:12px;
+}
+
+a:link {color:#8b0000; text-decoration:none;}
+a:visited {color:#8b0000; text-decoration:none;}
+a:hover {color:#ff0000; text-decoration:underline;}
+a:active {color:#8b0000; text-decoration:none;}
